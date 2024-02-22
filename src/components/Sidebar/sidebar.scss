@@ -1,0 +1,141 @@
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  position: fixed;
+  padding: 20px;
+  max-width: 104px;
+  width: 100%;
+  height: 100vh;
+  border: 3px solid #a7a4a4;
+  border-radius: 25px;
+  background-color: #000000;
+  transition: max-width 0.3s ease-in-out;
+
+  &.opened {
+    max-width: 300px;
+    transition: max-width 0.3s ease-in-out;
+  }
+
+  &__logo {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-shrink: 0;
+    overflow: hidden;
+
+    & img {
+      width: 54px;
+      height: 54px;
+    }
+
+    & .sidebar__text {
+      font-size: 32px;
+      font-weight: 500;
+    }
+  }
+
+  &__text {
+    font-size: 24px;
+    font-weight: 400;
+    color: white;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateX(100%);
+    width: 0;
+    transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out,
+      transform 0.3s ease-in-out, width 0.7s ease-in-out, color 0.3s ease-in-out;
+
+    &.open {
+      width: 100%;
+      opacity: 1;
+      visibility: visible;
+      transform: translateX(0);
+      transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out,
+        transform 0.3s ease-in-out, width 0s ease-in-out, color 0.3s ease-in-out;
+    }
+  }
+
+  &__button {
+    position: absolute;
+    top: 35px;
+    right: -45px;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    border-radius: 50px;
+    padding: 0;
+    background-color: #333333;
+    cursor: pointer;
+    outline: none;
+    transition: right .3s ease-in-out;
+
+    &.openButton {
+      right: -15px;
+    }
+
+    &-icon {
+      width: 18px;
+      height: 18px;
+    }
+  }
+
+  &__nav {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    height: 100%;
+    overflow-x: hidden;
+    overflow-y: auto;
+  }
+
+  &__menu {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    &:first-child {
+      flex-grow: 1;
+    }
+  }
+}
+
+.sidebar-menu {
+  &__link {
+    padding: 5px 10px 5px 18px;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    gap: 10px;
+    border-radius: 50px;
+    transition: background-color 0.3s ease-in-out;
+
+    &:hover {
+      background-color: rgb(172, 172, 172, 0.3);
+
+      & .sidebar__text,
+      & .sidebar-menu__icon {
+        color: #a551ff;
+      }
+    }
+
+    &:active {
+      & .sidebar__text,
+      & .sidebar-menu__icon {
+        color: #3a0078;
+      }
+    }
+  }
+
+  &__icon {
+    width: 20px;
+    height: 20px;
+    color: #c999fc;
+    transition: color 0.3s ease-in-out;
+  }
+}
