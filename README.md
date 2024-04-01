@@ -39,5 +39,5 @@
 
 ## Результат 
 
-![Результат открытый](https://github.com/BANDITOS86/my-img/blob/main/makves1.png?raw=true)
-![Результат закрытый](https://github.com/BANDITOS86/my-img/blob/main/makves2.png?raw=true)
+![Результат открытый](https://github.com/sashadev86/my-img/blob/main/makves1.png?raw=true)
+![Результат закрытый](https://github.com/sashadev86/my-img/blob/main/makves2.png?raw=true)
